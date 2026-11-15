@@ -49,6 +49,16 @@ button:disabled { opacity: .6; cursor: default; }
 .baglanti { background: #fff; border: 1px dashed var(--cizgi); border-radius: 10px; padding: 10px 12px; font-size: 14.5px; overflow-wrap: anywhere; margin-top: 12px; user-select: all; }
 .alt { text-align: center; color: var(--silik); font-size: 15px; margin-top: 22px; }
 .alt b { color: var(--yazi); white-space: nowrap; }
+.neden, .nasil { margin-top: 22px; }
+.neden h2, .nasil h2 { font-size: 21px; margin: 0 0 12px; text-wrap: balance; }
+.kartlar { display: grid; gap: 10px; }
+.k { display: flex; gap: 12px; align-items: flex-start; background: var(--kart); border: 1px solid var(--cizgi); border-radius: 14px; padding: 14px; }
+.k .i { font-size: 26px; line-height: 1; flex: none; width: 34px; text-align: center; }
+.k b { display: block; font-size: 16.5px; margin-bottom: 3px; color: var(--mavi-koyu); }
+.k p { margin: 0; font-size: 15.5px; color: var(--silik); }
+.nasil ol { margin: 0; padding: 0; list-style: none; counter-reset: a; display: grid; gap: 10px; }
+.nasil li { counter-increment: a; position: relative; padding: 12px 14px 12px 52px; background: var(--kart); border: 1px solid var(--cizgi); border-radius: 14px; font-size: 15.5px; }
+.nasil li::before { content: counter(a); position: absolute; left: 14px; top: 11px; width: 26px; height: 26px; border-radius: 50%; background: var(--mavi); color: #fff; font-weight: 800; display: grid; place-items: center; font-size: 15px; }
 .bilgi { margin-top: 22px; background: var(--kart); border: 1px solid var(--cizgi); border-radius: 14px; padding: 16px; }
 .bilgi h2 { margin: 0 0 8px; font-size: 19px; color: var(--mavi-koyu); }
 .bilgi p { font-size: 15.5px; color: var(--silik); }
@@ -77,8 +87,8 @@ button:disabled { opacity: .6; cursor: default; }
   <div id="icerik" hidden>
     <span class="yer" id="yer">📍 </span>
     <h1 id="baslik">Sokağınıza internet getirelim</h1>
-    <p id="giris">Bu adreste şu an altyapımız yok. Komşularınızla birlikte başvurursanız sokağınıza hizmet getirmek için keşif yapıyoruz.</p>
-    <p>Adınızı ve telefonunuzu bırakın; yeterli sayıya ulaşınca sizi arayalım.</p>
+    <p id="giris">Bu adrese şu an internetimiz ulaşmıyor. Komşularınızla birlikte başvurursanız sokağınıza getirmek için gelip bakıyoruz.</p>
+    <p>Adınızı ve telefonunuzu yazın; yeterli kişi olunca sizi arayalım.</p>
     <div class="say"><b id="say">0</b><span>kişi şu ana kadar başvurdu</span></div>
 
     <form id="form" novalidate>
@@ -105,15 +115,33 @@ button:disabled { opacity: .6; cursor: default; }
     </div>
   </div>
 
+  <section class="neden" aria-label="Neden Hiperonline">
+    <h2>Neden Hiperonline?</h2>
+    <div class="kartlar">
+      <div class="k"><span class="i">🏗️</span><div><b>Kendi fiber hattımız var</b><p>Fiber kablomuzu kendimiz döşedik. Başka bir şirketi beklemiyoruz.</p></div></div>
+      <div class="k"><span class="i">🤝</span><div><b>Birlikte başvurun, getirelim</b><p>Bölgenizden yeterli kişi başvurursa interneti size kadar getiriyoruz.</p></div></div>
+      <div class="k"><span class="i">♾️</span><div><b>Sınırsız internet</b><p>Kota yok. Evde herkes aynı anda kullanır, donmaz.</p></div></div>
+      <div class="k"><span class="i">📞</span><div><b>Telefon hattı gerekmez</b><p>Evde sabit telefon olmasa da bağlıyoruz.</p></div></div>
+      <div class="k"><span class="i">🧾</span><div><b>Taahhütsüz paket de var</b><p>Paketleri sizi aradığımızda anlatıyoruz.</p></div></div>
+    </div>
+  </section>
+  <section class="nasil" aria-label="Nasıl işliyor">
+    <h2>3 adımda</h2>
+    <ol>
+      <li><b>Adınızı ve telefonunuzu yazın.</b></li>
+      <li><b>Bu sayfayı komşularınıza gönderin.</b></li>
+      <li><b>Yeterli kişi olunca gelip bakar, sizi ararız.</b></li>
+    </ol>
+  </section>
   <section class="bilgi" aria-label="Hiperonline hakkında">
     <h2>Hiperonline</h2>
-    <p>Hiperonline; İzmir ve Ankara'nın ilçelerinde evlere ve iş yerlerine fiber internet ve altyapı gerektirmeyen sınırsız internet götüren bir internet servis sağlayıcısıdır. Altyapısı olmayan yerlerde de komşuların birlikte başvurusuyla bölgeye hizmet getirmeye çalışıyoruz.</p>
+    <p>Hiperonline, İzmir ve Ankara'nın ilçelerinde evlere ve iş yerlerine internet götüren bir internet şirketidir.</p>
     <ul>
       <li><span>Telefon</span><b>0850 840 98 83</b></li>
       <li><span>WhatsApp</span><b>0850 840 98 83</b></li>
       <li><span>Web</span><b>hiperonline.com.tr</b></li>
     </ul>
-    <p class="kucuk">Bilgileriniz yalnızca başvurunuz için kullanılır; sizi aramak ve WhatsApp'tan yazmak dışında hiçbir amaçla paylaşılmaz.</p>
+    <p class="kucuk">Bilgileriniz yalnızca sizi aramak ve WhatsApp'tan yazmak için kullanılır, kimseyle paylaşılmaz.</p>
   </section>
   <p class="alt">© Hiperonline</p>
 </main>
@@ -130,7 +158,7 @@ button:disabled { opacity: .6; cursor: default; }
   $("#icerik").hidden = false; $("#say").textContent = V.say;
   var K = { sokak: ["Sokağınıza", "sokağınıza", "Sokağımıza"], site: ["Sitenize", "sitenize", "Sitemize"], mahalle: ["Mahallenize", "mahallenize", "Mahallemize"], koy: ["Köyünüze", "köyünüze", "Köyümüze"] }[V.kapsam] || ["Sokağınıza", "sokağınıza", "Sokağımıza"];
   $("#baslik").textContent = K[0] + " internet getirelim";
-  $("#giris").textContent = "Bu adreste şu an altyapımız yok. Komşularınızla birlikte başvurursanız " + K[1] + " hizmet getirmek için keşif yapıyoruz.";
+  $("#giris").textContent = "Bu adrese şu an internetimiz ulaşmıyor. Komşularınızla birlikte başvurursanız " + K[1] + " getirmek için gelip bakıyoruz.";
   $("#yer2").textContent = K[1];
   if (V.kapsam === "mahalle" || V.kapsam === "koy") { $("#sokak-satir").hidden = false; $("#sokak-not").textContent = V.kapsam === "koy" ? "(varsa)" : ""; }
   var form = $("#form"), uyari = $("#uyari"), gonder = $("#gonder");
