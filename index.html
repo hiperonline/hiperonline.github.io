@@ -59,6 +59,8 @@ button:disabled { opacity: .6; cursor: default; }
 .nasil ol { margin: 0; padding: 0; list-style: none; counter-reset: a; display: grid; gap: 10px; }
 .nasil li { counter-increment: a; position: relative; padding: 12px 14px 12px 52px; background: var(--kart); border: 1px solid var(--cizgi); border-radius: 14px; font-size: 15.5px; }
 .nasil li::before { content: counter(a); position: absolute; left: 14px; top: 11px; width: 26px; height: 26px; border-radius: 50%; background: var(--mavi); color: #fff; font-weight: 800; display: grid; place-items: center; font-size: 15px; }
+.wa-bize { background: #1f8a4c; margin: 4px 0 12px; }
+.wa-ince { display: block; text-align: center; margin: -6px 0 16px; color: #1f8a4c; font-weight: 700; text-decoration: none; font-size: 15.5px; }
 .bilgi { margin-top: 22px; background: var(--kart); border: 1px solid var(--cizgi); border-radius: 14px; padding: 16px; }
 .bilgi h2 { margin: 0 0 8px; font-size: 19px; color: var(--mavi-koyu); }
 .bilgi p { font-size: 15.5px; color: var(--silik); }
@@ -79,7 +81,8 @@ button:disabled { opacity: .6; cursor: default; }
 <main>
   <div id="gecersiz" class="hata-kutu" hidden>
     <h1>Bu bağlantı geçerli değil</h1>
-    <p>Bağlantı eksik kopyalanmış ya da başvuru kapanmış olabilir. Bize telefonla ulaşabilirsiniz.</p>
+    <p>Bağlantı eksik kopyalanmış ya da başvuru kapanmış olabilir. Bize telefonla ya da WhatsApp'tan ulaşabilirsiniz.</p>
+    <a class="dugme wa-bize" href="https://wa.me/908508409883?text=Merhaba%2C%20toplu%20internet%20ba%C5%9Fvurusu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">💬 Bize WhatsApp'tan yazın</a>
   </div>
 
   <div id="yukleniyor"><p style="text-align:center;color:var(--silik);margin:40px 0">Yükleniyor…</p></div>
@@ -90,6 +93,7 @@ button:disabled { opacity: .6; cursor: default; }
     <p id="giris">Bu adrese şu an internetimiz ulaşmıyor. Komşularınızla birlikte başvurursanız sokağınıza getirmek için gelip bakıyoruz.</p>
     <p>Adınızı ve telefonunuzu yazın; yeterli kişi olunca sizi arayalım.</p>
     <div class="say"><b id="say">0</b><span>kişi şu ana kadar başvurdu</span></div>
+    <a class="wa-ince" href="https://wa.me/908508409883?text=Merhaba%2C%20toplu%20internet%20ba%C5%9Fvurusu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">💬 Sorunuz mu var? Bize WhatsApp'tan yazın</a>
 
     <form id="form" novalidate>
       <p class="uyari" id="uyari" role="alert" hidden></p>
@@ -141,6 +145,7 @@ button:disabled { opacity: .6; cursor: default; }
       <li><span>WhatsApp</span><b>0850 840 98 83</b></li>
       <li><span>Web</span><b>hiperonline.com.tr</b></li>
     </ul>
+    <a class="dugme wa-bize" href="https://wa.me/908508409883?text=Merhaba%2C%20toplu%20internet%20ba%C5%9Fvurusu%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener">💬 Bize WhatsApp'tan yazın</a>
     <p class="kucuk">Bilgileriniz yalnızca sizi aramak ve WhatsApp'tan yazmak için kullanılır, kimseyle paylaşılmaz.</p>
   </section>
   <p class="alt">© Hiperonline</p>
